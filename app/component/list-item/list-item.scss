@@ -39,12 +39,15 @@
 
     i {
       color: #000;
+      margin-left: 4px;
+      margin-right: -1px;
     }
 
     p {
       color: #ff7a7a;
       display: inline;
-      margin-left: 1px;
+      margin: 0px;
+      //margin-right: 1px;
     } 
   }
 }

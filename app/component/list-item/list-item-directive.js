@@ -9,7 +9,9 @@ angular.module('demoApp')
     template: require('./list-item.html'),
     scope: {
       title: '@',
-      desc: '@'
+      desc: '@',
+      bombs: '@',
+      hearts: '@',
     }
   }
 })
