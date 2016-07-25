@@ -1,0 +1,13 @@
+<section class="app-gallery">
+  <app-header select-gallery-style="galleryCtrl.selectGalleryStyle(style)"> </app-header>
+
+  <div class="gallery-item-container">
+    <app-list-item ng-repeat="item in galleryCtrl.images" ng-show="galleryCtrl.galleryStyle === 'list'"title="{{item.title}}" desc="{{item.desc}}"> </app-list-item>
+
+    <app-thumb-item ng-repeat="item in galleryCtrl.images"ng-show="galleryCtrl.galleryStyle === 'thumb'" title="{{item.title}}" img-url="{{item.imgUrl}}"> </app-list-item>
+
+    <app-itg-item ng-repeat="item in galleryCtrl.images"ng-show="galleryCtrl.galleryStyle === 'image'" title="{{item.title}}" img-url="{{item.imgUrl}}" desc="{{item.desc}}"> </app-list-item>
+  </div>
+
+</section>
+
