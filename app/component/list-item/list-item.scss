@@ -29,7 +29,7 @@
     margin-bottom: 2px;
   }
 
-  .heart {
+  .app-social-status {
     position: absolute;
     right: 0;
     top: 0;
@@ -37,17 +37,12 @@
     margin-top: 5px;
     margin-right: 4px;
 
-    i {
-      color: #000;
-      margin-left: 4px;
-      margin-right: -1px;
-    }
-
-    p {
+    .app-social-status-text {
       color: #ff7a7a;
-      display: inline;
-      margin: 0px;
-      //margin-right: 1px;
     } 
+
+    .disabled {
+      color: #777;
+    }
   }
 }

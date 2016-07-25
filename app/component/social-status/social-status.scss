@@ -16,3 +16,19 @@
       color: #777;
     }
 }
+
+.app-social-status-icon:hover {
+  color: #ffa77a;; 
+ 
+  .disabled {
+    color: #777;
+  }
+}
+
+.app-social-status-icon:active {
+  color: #a77aff;
+  .disabled {
+    color: #777;
+  }
+}
+
