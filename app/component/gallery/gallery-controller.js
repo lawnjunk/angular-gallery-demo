@@ -4,7 +4,7 @@ const angular = require('angular')
 angular.module('demoApp').controller('GalleryController', ['imageService', GalleryController])
 
 function GalleryController(imageService){
-  this.galleryStyle = 'thumb'
+  this.galleryStyle = 'list'
   imageService.addImage({
     title: 'gulp orchid', 
     desc: 'this is a demo',

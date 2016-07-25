@@ -49,9 +49,22 @@
 	__webpack_require__(1);
 	__webpack_require__(2);
 
-	var angular = __webpack_require__(13);
+	var angular = __webpack_require__(14);
 	angular.module('demoApp', []);
-	__webpack_require__(15);
+	// config
+	// run
+	// services
+	__webpack_require__(16);
+	// controllers
+	// directives
+
+
+	__webpack_require__(17);
+	__webpack_require__(22);
+	__webpack_require__(27);
+	__webpack_require__(35);
+	__webpack_require__(40);
+	__webpack_require__(45);
 
 /***/ },
 /* 1 */
@@ -76,15 +89,16 @@
 /* 10 */,
 /* 11 */,
 /* 12 */,
-/* 13 */
+/* 13 */,
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(14);
+	__webpack_require__(15);
 	module.exports = angular;
 
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 	/**
@@ -31562,37 +31576,339 @@
 	!window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	__webpack_require__(16);
-	__webpack_require__(18);
-
-/***/ },
 /* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	__webpack_require__(13).module('demoApp').directive('appMain', function () {
+	var angular = __webpack_require__(14);
+
+	angular.module('demoApp').factory('imageService', function () {
+	  var images = [];
+	  var addImage = function addImage(img) {
+	    this.images.push(img);
+	  };
+
+	  var removeImageWithImgUrl = function removeImageWithImgUrl(imgUrl) {
+	    this.images = images.filter(function (img) {
+	      if (img.imgUrl === imgUrl) return false;
+	      return true;
+	    });
+	  };
+
 	  return {
-	    restrict: 'E',
-	    replace: true,
-	    scope: true,
-	    template: __webpack_require__(17)
+	    images: images,
+	    addImage: addImage,
+	    removeImageWithImgUrl: removeImageWithImgUrl
 	  };
 	});
 
 /***/ },
 /* 17 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<main class=\"app-main\">\n  <header>\n    <i class=\"fa fa-bug\" aria-hidden=\"true\"></i> \n  </header>\n  <h1>test test 123</h1>\n</main>\n";
+	'use strict';
+
+	__webpack_require__(18);
+	__webpack_require__(20);
 
 /***/ },
 /* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	__webpack_require__(14).module('demoApp').directive('appMain', function () {
+	  return {
+	    restrict: 'E',
+	    replace: true,
+	    scope: true,
+	    template: __webpack_require__(19)
+	  };
+	});
+
+/***/ },
+/* 19 */
+/***/ function(module, exports) {
+
+	module.exports = "<main class=\"app-main\">\n  <app-gallery> </app-gallery>\n</main>\n";
+
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 21 */,
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	__webpack_require__(23);
+	__webpack_require__(25);
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var angular = __webpack_require__(14);
+
+	angular.module('demoApp').directive('appHeader', function () {
+	  return {
+	    restrict: 'E',
+	    replace: true,
+	    template: __webpack_require__(24),
+	    scope: {
+	      selectGalleryStyle: '&'
+	    }
+	  };
+	});
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	module.exports = "<header class=\"app-header\">\n  <section class=\"header-logo\">\n    <i class=\"fa fa-bug fa-3x\" aria-hidden=\"true\"></i>\n    <h1> Glitter Gallery </h1>\n  </section>\n  <div class=\"btn-group gallery-view-selector\">\n    <button class=\"btn btn-default\"\n      ng-click=\"selectGalleryStyle({style: 'list'})\">\n      list</button>\n    <button class=\"btn btn-default\"\n      ng-click=\"selectGalleryStyle({style: 'thumb'})\">\n      thumb</button>\n    <button class=\"btn btn-default\"\n      ng-click=\"selectGalleryStyle({style: 'image'})\">\n      gallery</button>\n  </div>\n  <div class=\"header-padding\"></div>\n</header>\n";
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 26 */,
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	__webpack_require__(28);
+	__webpack_require__(30);
+	__webpack_require__(33);
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	__webpack_require__(14).module('demoApp').directive('appGallery', function () {
+	  return {
+	    restrict: 'E',
+	    replace: true,
+	    template: __webpack_require__(29),
+	    controller: 'GalleryController',
+	    controllerAs: 'galleryCtrl',
+	    bindToController: true
+	  };
+	});
+
+/***/ },
+/* 29 */
+/***/ function(module, exports) {
+
+	module.exports = "<section class=\"app-gallery\">\n  <app-header select-gallery-style=\"galleryCtrl.selectGalleryStyle(style)\"> </app-header>\n\n  <div class=\"gallery-item-container\">\n    <app-list-item ng-repeat=\"item in galleryCtrl.images\" ng-show=\"galleryCtrl.galleryStyle === 'list'\"title=\"{{item.title}}\" desc=\"{{item.desc}}\" bombs=\"{{item.bombs}}\" hearts=\"{{item.hearts}}\"> </app-list-item>\n\n    <app-thumb-item ng-repeat=\"item in galleryCtrl.images\"ng-show=\"galleryCtrl.galleryStyle === 'thumb'\" title=\"{{item.title}}\" img-url=\"{{item.imgUrl}}\" bombs=\"{{item.bombs}}\" hearts=\"{{item.hearts}}\"> </app-list-item>\n\n    <app-itg-item ng-repeat=\"item in galleryCtrl.images\"ng-show=\"galleryCtrl.galleryStyle === 'image'\" title=\"{{item.title}}\" img-url=\"{{item.imgUrl}}\" desc=\"{{item.desc}}\" bombs=\"{{item.bombs}}\" hearts=\"{{item.hearts}}\"> </app-list-item>\n  </div>\n\n</section>\n\n";
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var angular = __webpack_require__(14);
+	angular.module('demoApp').controller('GalleryController', ['imageService', GalleryController]);
+
+	function GalleryController(imageService) {
+	  this.galleryStyle = 'thumb';
+	  imageService.addImage({
+	    title: 'gulp orchid',
+	    desc: 'this is a demo',
+	    imgUrl: __webpack_require__(31),
+	    bombs: 2,
+	    hearts: 23
+	  });
+
+	  imageService.addImage({
+	    title: 'lulwat lilly',
+	    desc: 'this is an image of a flower found on mount lulwat',
+	    imgUrl: __webpack_require__(32),
+	    bombs: 34,
+	    hearts: 2
+	  });
+
+	  console.log(imageService);
+	  this.images = imageService.images;
+	  this.selectGalleryStyle = function (style) {
+	    if (style === 'list' || style === 'thumb' || style === 'image') this.galleryStyle = style;
+	    return this.galleryStyle;
+	  };
+	}
+
+/***/ },
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "img/91b9abdbf8b83a531461d0bf2218af8d.jpg";
+
+/***/ },
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "img/1ecd8f6ca9052daa6ea59088c4687c72.jpg";
+
+/***/ },
+/* 33 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 34 */,
+/* 35 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	__webpack_require__(36);
+	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./social-status-directive.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	__webpack_require__(38);
+
+/***/ },
+/* 36 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var angular = __webpack_require__(14);
+
+	angular.module('demoApp').controller([SocialStatusController]);
+
+	function SocialStatusController() {
+	  this.bombDirty = false;
+	  this.heartDirty = false;
+
+	  this.bombClick = function () {
+	    if (this.heartDirty) return;
+
+	    if (this.bombDirty) {
+	      this.bombs--;
+	      this.bombDirty = false;
+	      return;
+	    }
+
+	    this.bombs++;
+	    this.bombDirty = true;
+	  };
+
+	  this.heartClick = function () {
+	    if (this.bombDirty) return;
+
+	    if (this.heartDirty) {
+	      this.hearts--;
+	      this.heartDirty = false;
+	      return;
+	    }
+
+	    this.hearts++;
+	    this.heartDirty = true;
+	  };
+	}
+
+/***/ },
+/* 37 */,
+/* 38 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 39 */,
+/* 40 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	__webpack_require__(41);
+	__webpack_require__(43);
+
+/***/ },
+/* 41 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var angular = __webpack_require__(14);
+	angular.module('demoApp').directive('appListItem', function () {
+	  return {
+	    restrict: 'E',
+	    replace: true,
+	    template: __webpack_require__(42),
+	    scope: {
+	      title: '@',
+	      desc: '@',
+	      bombs: '@',
+	      hearts: '@'
+	    }
+	  };
+	});
+
+/***/ },
+/* 42 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"app-list-item\">\n  <h2>{{title}}</h2>\n  <p> {{desc}} </p> \n\n  <div class=\"heart\">\n    <i class=\"fa fa-bomb\"></i>\n    <p> {{bombs}} </32>\n    <i class=\"fa fa-heart\"></i>\n    <p> {{hearts}} </p> \n  </div >\n</div>\n";
+
+/***/ },
+/* 43 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 44 */,
+/* 45 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	__webpack_require__(46);
+	__webpack_require__(48);
+
+/***/ },
+/* 46 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var angular = __webpack_require__(14);
+
+	angular.module('demoApp').directive('appThumbItem', function () {
+	  return {
+	    restrict: 'E',
+	    replace: true,
+	    template: __webpack_require__(47),
+	    scope: {
+	      imgUrl: '@',
+	      title: '@',
+	      bombs: '@',
+	      hearts: '@'
+	    }
+	  };
+	});
+
+/***/ },
+/* 47 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"app-thumb-item\">\n  <img ng-src=\"{{imgUrl}}\" alt=\"{{title}}\" width=\"100\" height=\"100\">\n\n</div>\n";
+
+/***/ },
+/* 48 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

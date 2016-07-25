@@ -1,7 +1,6 @@
 .app-thumb-item {
   position: relative;
   padding: 4px;
-  border: 2px dotted black;
 
   img {
     border: 4px solid black;
@@ -9,9 +8,28 @@
     border-radius: 10px 0px 10px 0px;
   }
 
-  .social {
+  .app-social-status {
     margin-top: 2px;
-    margin-left: 4px;
+    margin-left: 8px;
+  }
+}
+
+.app-thumb-item:hover {
+  img {
+    border: 4px solid white;
+    box-shadow: 4px 4px black;
+  }
+
+  .app-social-status-icon {
+    color: #fff;
+  }
+
+  .app-social-status-text {
+    color: #000;
+  }
+  
+  .disabled {
+    color: #777;
   }
 }
 

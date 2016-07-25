@@ -11,8 +11,8 @@ angular.module('demoApp')
     scope: {
       imgUrl: '@',
       title: '@',
-      bombs: '@',
-      hearts: '@',
+      bombs: '=',
+      hearts: '=',
     },
   }
 })

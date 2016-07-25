@@ -1,0 +1,18 @@
+.app-social-status {
+    color: #000;
+    .app-socal-status-icon {
+      margin-right: -1px;
+      margin-left: 4px;
+    }
+
+    p {
+      display: inline;
+      font-weight: bold;
+      font-size: 0.9em;
+      color: #fff;
+    }
+
+    .disabled {
+      color: #777;
+    }
+}

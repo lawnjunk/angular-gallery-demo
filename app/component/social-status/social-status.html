@@ -1,0 +1,6 @@
+<div class="app-social-status">
+  <i class="app-social-status-icon fa fa-bomb" ng-click="socialStatusCtrl.bombClick()" ng-class="{disabled: socialStatusCtrl.heartDirty}" ></i>
+  <p class="app-social-status-text" ng-class="{disabled: socialStatusCtrl.heartDirty}"> {{socialStatusCtrl.bombs}} </p> 
+  <i class="app-social-status-icon fa fa-heart" ng-click="socialStatusCtrl.heartClick()" ng-class="{disabled: socialStatusCtrl.bombDirty}"></i>
+  <p class="app-social-status-text" ng-class="{disabled: socialStatusCtrl.bombDirty}"> {{socialStatusCtrl.hearts}} </p> 
+</div>
