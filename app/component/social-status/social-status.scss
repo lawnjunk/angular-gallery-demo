@@ -1,5 +1,7 @@
+@import "_theme";
+
 .app-social-status {
-    color: #000;
+    color: $app-cdark;
     .app-socal-status-icon {
       margin-right: -1px;
       margin-left: 4px;
@@ -9,26 +11,28 @@
       display: inline;
       font-weight: bold;
       font-size: 0.9em;
-      color: #fff;
+      color: $app-clight;
     }
 
     .disabled {
-      color: #777;
+      color: $app-cdisabled;
     }
 }
 
 .app-social-status-icon:hover {
-  color: #ffa77a;; 
+  color: $app-cfocus; 
  
   .disabled {
-    color: #777;
+    color: $app-cdisabled;
   }
 }
 
 .app-social-status-icon:active {
-  color: #a77aff;
+  color: $app-cactive;
+
   .disabled {
-    color: #777;
+    color: $app-cdisabled;
   }
 }
+
 

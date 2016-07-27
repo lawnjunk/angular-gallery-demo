@@ -7,11 +7,9 @@ angular.module('demoApp')
   return {
     restrict: 'E',
     replace: true,
-    tempelate: require('./img-item.html'),
+    template: require('./img-item.html'),
     scope: {
-      title: '@',
-      imgUrl: '@',
-      desc: '@',
+      image: '=',
     }
   }
 })

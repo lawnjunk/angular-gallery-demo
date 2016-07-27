@@ -1,8 +1,9 @@
-@import "vendor/normalize.css";
-@import "vendor/bootstrap/bootstrap.css";
+@import "vendor/normalize.scss";
+@import "vendor/bootstrap/bootstrap.scss";
 @import "vendor/font-awesome-4.6.3/scss/font-awesome.scss";
 @import "font/RubikOne-Regular.ttf";
+@import "_theme";
 
 body {
-  background-color: #ff7a7a;
+  background-color: $app-cdefault;
 }

@@ -15,11 +15,5 @@ angular.module('demoApp')
       hearts: '=', 
       bombs: '=',
     },
-    link: function(scope, elem, attr){
-      console.log(scope)
-      scope.$watch('socialStatusCtrl.bombs', function(){
-        console.log('elem', elem)
-      })
-    },
   }
 })

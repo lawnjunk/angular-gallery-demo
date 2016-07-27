@@ -44,5 +44,8 @@ module.exports = {
       },
     ],
   },
+  sassLoader: {
+    includePaths: [`${__dirname}/app/scss/lib`],
+  },
   postcss: [ autoprefixer({browsers: ['last 2 versions']})],
 }

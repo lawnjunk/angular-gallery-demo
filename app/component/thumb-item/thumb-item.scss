@@ -1,10 +1,12 @@
+@import "_theme";
+
 .app-thumb-item {
   position: relative;
   padding: 4px;
 
   img {
-    border: 4px solid black;
-    box-shadow: 4px 4px white;
+    border: 4px solid $app-cdark;
+    box-shadow: 4px 4px $app-clight;
     border-radius: 10px 0px 10px 0px;
   }
 
@@ -16,9 +18,8 @@
 
 .app-thumb-item:hover {
   img {
-    border: 4px solid white;
-    box-shadow: 4px 4px black;
+    border: 4px solid $app-clight;
+    box-shadow: 4px 4px $app-cdark;
   }
-  
 }
 

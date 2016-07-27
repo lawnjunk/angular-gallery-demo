@@ -1,6 +1,9 @@
 <div class="app-list-item">
-  <h2>{{title}}</h2>
-  <p> {{desc}} </p> 
+  <h2>
+    <i class="fa fa-file-image-o" aria-hidden="true"></i>
+    {{image.title}}
+  </h2>
+  <p> {{image.desc}} </p> 
 
-  <app-social-status bombs="bombs" hearts="hearts"> </app-social-status>
+  <app-social-status bombs="image.bombs" hearts="image.hearts"> </app-social-status>
 </div>

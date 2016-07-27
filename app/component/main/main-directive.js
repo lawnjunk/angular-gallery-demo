@@ -5,7 +5,10 @@ require('angular').module('demoApp')
   return {
     restrict: 'E',
     replace: true,
-    scope: true,
+    scope: {},
+    controller: 'MainController',
+    controllerAs: 'mainCtrl',
+    bindToController: true,
     template: require('./main.html')
   }
 })

@@ -1,28 +1,36 @@
+@import "_theme";
+
 .app-list-item {
   position: relative;
-  width: 50%;
-  background-color: #000;
-  border: 2px solid black;
+  width: 100%;
+  background-color: $app-cdark;
+  border: 2px solid $app-cdark;
   margin: 10px;
   padding-left: 10px;
   padding-top: 2px;
   border-radius: 10px 0px 10px 0px;
-  box-shadow: 4px 4px white;
+  box-shadow: 4px 4px $app-clight;
 
   h2 {
+    .fa-file-image-o {
+      color: $app-cdark;
+      margin-right: 8px;
+    }
+
     width: calc(100% + 2px);
     margin-top: 4px;
     margin-bottom: 4px;
     padding: 0px;
-    padding-left: 15px;
+    padding-left: 8px;
     line-height: 1.3em;
-    background-color: white;
-    color: #ff7a7a;
+    background-color: $app-clight;
+    color: $app-cdefault;
     font-size: 1em;
   }
 
+
   p {
-    color: #ff7a7a;
+    color: $app-cdefault;
     font-size: 0.75em;
     font-weight: bold;
     margin: 0px;
@@ -38,11 +46,37 @@
     margin-right: 4px;
 
     .app-social-status-text {
-      color: #ff7a7a;
-    } 
+      color: $app-cdefault;
+    }
 
     .disabled {
-      color: #777;
+      color: $app-cdisabled;
     }
   }
 }
+
+.app-list-item:hover {
+  background-color: $app-clight;
+  box-shadow: 4px 4px $app-cdark;
+  h2 {
+    color: $app-clight;
+    background-color: $app-cdark;
+  }
+
+  .fa {
+    color: $app-clight;
+  }
+
+  .fa:hover {
+    color: $app-cfocus;
+  }
+
+  .fa:active {
+    color: $app-cactive;
+  }
+
+  .fa.disabled {
+    color: $app-cdisabled;
+  }
+}
+

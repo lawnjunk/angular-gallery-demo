@@ -9,10 +9,7 @@ angular.module('demoApp')
     replace: true,
     template: require('./thumb-item.html'),
     scope: {
-      imgUrl: '@',
-      title: '@',
-      bombs: '=',
-      hearts: '=',
+      image: '=',
     },
   }
 })

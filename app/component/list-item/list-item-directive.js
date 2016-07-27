@@ -8,10 +8,7 @@ angular.module('demoApp')
     replace: true,
     template: require('./list-item.html'),
     scope: {
-      title: '@',
-      desc: '@',
-      bombs: '@',
-      hearts: '@',
+      image: '=',
     }
   }
 })
